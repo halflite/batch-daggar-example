@@ -1,9 +1,8 @@
 package batch.inject;
 
 import java.time.ZoneId;
-
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
+import org.eclipse.microprofile.config.Config;
+import org.eclipse.microprofile.config.ConfigProvider;
 
 import dagger.Module;
 import dagger.Provides;
@@ -17,14 +16,14 @@ public class AppModule {
   @Provides
   @Singleton
   public Config config() {
-    return ConfigFactory.load();
+    return ConfigProvider.getConfig();
   }
 
   /** ZoneId の DI */
   @Provides
   @Singleton
   public ZoneId zoneId(Config config) {
-    String zoneId = config.getString("tz");
+    String zoneId = config.getValue("tz", String.class);
     return ZoneId.of(zoneId);
   }
 }

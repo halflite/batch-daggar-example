@@ -2,6 +2,7 @@ package batch;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import batch.inject.DaggerAppComponent;
 import batch.service.ProcessingService;
@@ -13,6 +14,9 @@ public class App {
 
   public static void main(String[] args) {
     LOG.info("started.");
+    // jul to slf4j bridge
+    SLF4JBridgeHandler.removeHandlersForRootLogger();
+    SLF4JBridgeHandler.install();
 
     // ビジネスロジック取得
     ProcessingService service = DaggerAppComponent.create().processingService();
