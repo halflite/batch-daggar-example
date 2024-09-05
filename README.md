@@ -1,11 +1,11 @@
 # batch-daggar-example
 
-Batch example.
+Java based batch example.
 
 * Java 17+
 * Maven 3.9+
-* Daggar 2.52
-* TypesafeConfig
+* Dagger 2.52
+* MicroProfile Config
 * Slf4j/Log4j2
 
 ### Compile & build
