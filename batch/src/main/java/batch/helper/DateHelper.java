@@ -28,7 +28,7 @@ public class DateHelper {
 
   @Inject
   public DateHelper(ZoneId zoneId) {
-    LOG.info("zone id: {}", zoneId);
+    LOG.debug("zone id: {}", zoneId);
     this.zoneId = zoneId;
   }
 }

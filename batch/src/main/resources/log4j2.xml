@@ -9,5 +9,6 @@
     <Root level="INFO" additivity="true">
       <AppenderRef ref="stdout" />
     </Root>
+    <Logger name="batch" level="DEBUG"/>
   </Loggers>
 </Configuration>

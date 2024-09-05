@@ -9,6 +9,7 @@ import batch.helper.DateHelper;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
+/** 実行用サービスクラス */
 @Singleton
 public class ProcessingService {
   /** logger */
@@ -20,6 +21,7 @@ public class ProcessingService {
   /** 実行 */
   public void execute() {
     Date now = this.dateHelper.now();
+    // 日時をログで出します
     LOG.info("now: {}", now);
   }
 
